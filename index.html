@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Himani R</title>
+
 <style>
   :root{
     --bg:#ffffff;
@@ -14,9 +15,11 @@
     --border:#e5e5e5;
     --navbg:#f5f5f4;
   }
+
   *{box-sizing:border-box;margin:0;padding:0;}
+
   body{
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
     color:var(--text);
     background:var(--bg);
     line-height:1.65;
@@ -27,141 +30,377 @@
   nav{
     background:var(--navbg);
     border-bottom:1px solid var(--border);
-    position:sticky; top:0; z-index:10;
+    position:sticky;
+    top:0;
+    z-index:10;
   }
+
   nav .nav-inner{
-    display:flex; justify-content:space-between; align-items:center;
-    padding:18px 40px; flex-wrap:wrap; gap:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+    flex-wrap:wrap;
+    gap:12px;
   }
-  nav .brand{font-weight:700; font-size:18px; letter-spacing:-0.2px;}
-  .nav-right{display:flex; align-items:center; gap:28px; flex-wrap:wrap;}
+
+  nav .brand{
+    font-weight:700;
+    font-size:18px;
+    letter-spacing:-0.2px;
+  }
+
+  .nav-right{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+
   .nav-right button{
-    all:unset; cursor:pointer;
-    color:var(--link); font-size:13px; letter-spacing:0.5px; font-weight:600;
+    all:unset;
+    cursor:pointer;
+    color:var(--link);
+    font-size:13px;
+    letter-spacing:0.5px;
+    font-weight:600;
     text-transform:uppercase;
-    padding:4px 2px; border-bottom:2px solid transparent;
+    padding:4px 2px;
+    border-bottom:2px solid transparent;
   }
+
   .nav-right button:hover{color:var(--accent);}
-  .nav-right button.active{color:var(--accent); border-bottom:2px solid var(--accent);}
-  .menu-toggle{display:none; all:unset; cursor:pointer; font-size:20px;}
+
+  .nav-right button.active{
+    color:var(--accent);
+    border-bottom:2px solid var(--accent);
+  }
+
+  .menu-toggle{
+    display:none;
+    all:unset;
+    cursor:pointer;
+    font-size:20px;
+  }
 
   /* LAYOUT */
   .layout{
-    display:flex; gap:56px; max-width:1100px; margin:0 auto;
-    padding:48px 40px; align-items:flex-start; flex-wrap:wrap;
+    display:flex;
+    gap:56px;
+    max-width:1100px;
+    margin:0 auto;
+    padding:48px 40px;
+    align-items:flex-start;
+    flex-wrap:wrap;
   }
 
-  /* LEFT COLUMN (persistent) */
-  .left-col{width:225px; flex-shrink:0;}
-  .photo{
-    width:225px; height:280px; border-radius:6px; overflow:hidden;
-    background:#eee; margin-bottom:22px; border:1px solid var(--border);
-    display:flex; align-items:center; justify-content:center;
-    color:var(--accent); font-size:44px; font-weight:700;
+  /* LEFT COLUMN */
+  .left-col{
+    width:225px;
+    flex-shrink:0;
   }
-  .photo img{width:100%; height:100%; object-fit:cover;}
-  .left-block{margin-bottom:22px;}
-  .left-block h4{font-size:13px; font-weight:700; margin-bottom:6px;}
-  .left-block a, .left-block span{font-size:13.5px; color:var(--link); text-decoration:none; display:block;}
+
+  .photo{
+    width:225px;
+    height:280px;
+    border-radius:6px;
+    overflow:hidden;
+    background:#eee;
+    margin-bottom:22px;
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--accent);
+    font-size:44px;
+    font-weight:700;
+  }
+
+  .photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .left-block{
+    margin-bottom:22px;
+  }
+
+  .left-block h4{
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:6px;
+  }
+
+  .left-block a,
+  .left-block span{
+    font-size:13.5px;
+    color:var(--link);
+    text-decoration:none;
+    display:block;
+  }
+
   .left-block a:hover{text-decoration:underline;}
+
   .left-block .plain{color:var(--muted);}
 
-  /* RIGHT / MAIN CONTENT */
-  .main{flex:1; min-width:280px;}
+  /* MAIN CONTENT */
+  .main{
+    flex:1;
+    min-width:280px;
+  }
+
   .page{display:none;}
+
   .page.active{display:block;}
 
-  h1{font-size:26px; font-weight:700; margin-bottom:20px;}
-  h2.section-heading{font-size:17px; font-weight:700; margin-top:26px; margin-bottom:10px;}
-  h3.sub-heading{font-size:14.5px; font-weight:700; margin-top:16px; margin-bottom:8px; color:#333;}
-  p{color:#333; margin-bottom:14px; max-width:640px;}
-  ul.bullets{list-style:disc; padding-left:20px; margin-bottom:8px;}
-  ul.bullets li{margin-bottom:8px; color:#333; font-size:15px;}
+  h1{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:20px;
+  }
 
-  .home-tagline{color:var(--muted); font-size:16px; margin-bottom:16px;}
+  h2.section-heading{
+    font-size:17px;
+    font-weight:700;
+    margin-top:26px;
+    margin-bottom:10px;
+  }
 
-  .item{margin-bottom:26px; padding-bottom:26px; border-bottom:1px solid var(--border); max-width:640px;}
+  h3.sub-heading{
+    font-size:14.5px;
+    font-weight:700;
+    margin-top:16px;
+    margin-bottom:8px;
+    color:#333;
+  }
+
+  p{
+    color:#333;
+    margin-bottom:14px;
+    max-width:640px;
+  }
+
+  ul.bullets{
+    list-style:disc;
+    padding-left:20px;
+    margin-bottom:8px;
+  }
+
+  ul.bullets li{
+    margin-bottom:8px;
+    color:#333;
+    font-size:15px;
+  }
+
+  .home-tagline{
+    color:var(--muted);
+    font-size:16px;
+    margin-bottom:16px;
+  }
+
+  .item{
+    margin-bottom:26px;
+    padding-bottom:26px;
+    border-bottom:1px solid var(--border);
+    max-width:640px;
+  }
+
   .item:last-child{border-bottom:none;}
-  .item .meta{color:var(--muted); font-size:13.5px; margin-bottom:6px;}
-  .item .desc{color:#444; font-size:14.5px; margin-top:6px;}
+
+  .item .meta{
+    color:var(--muted);
+    font-size:13.5px;
+    margin-bottom:6px;
+  }
+
+  .item .desc{
+    color:#444;
+    font-size:14.5px;
+    margin-top:6px;
+  }
+
   .item .links{margin-top:8px;}
-  .item .links a{font-size:13.5px; color:var(--link); text-decoration:none; margin-right:14px;}
+
+  .item .links a{
+    font-size:13.5px;
+    color:var(--link);
+    text-decoration:none;
+    margin-right:14px;
+  }
+
   .item .links a:hover{text-decoration:underline;}
 
   .cv-box{
-    border:1px solid var(--border); border-radius:8px; padding:20px; max-width:640px;
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:20px;
+    max-width:640px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
   }
+
   .btn{
-    display:inline-block; background:var(--accent); color:#fff !important;
-    padding:9px 16px; border-radius:6px; text-decoration:none; font-size:14px; font-weight:500;
+    display:inline-block;
+    background:var(--accent);
+    color:#fff !important;
+    padding:9px 16px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
   }
+
   .btn:hover{opacity:0.9;}
-  .btn.secondary{background:none; color:var(--accent) !important; border:1px solid var(--accent);}
+
+  .btn.secondary{
+    background:none;
+    color:var(--accent) !important;
+    border:1px solid var(--accent);
+  }
 
   .gallery-grid{
-    display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
-    gap:14px; margin-bottom:30px; max-width:640px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    gap:14px;
+    margin-bottom:30px;
+    max-width:640px;
   }
+
   .gallery-cell{
-    border:1px solid var(--border); border-radius:6px; overflow:hidden;
+    border:1px solid var(--border);
+    border-radius:6px;
+    overflow:hidden;
     background:#fafafa;
   }
-  .gallery-cell img{width:100%; height:130px; object-fit:cover; display:block;}
-  .gallery-placeholder{
-    width:100%; height:130px; display:flex; align-items:center; justify-content:center;
-    color:var(--muted); font-size:13px; background:#f0f0ef;
-  }
-  .gallery-caption{padding:6px 8px; font-size:12.5px; color:var(--muted);}
 
-  .contact-list{list-style:none; max-width:400px;}
-  .contact-list li{margin-bottom:10px; font-size:15px;}
-  .contact-list a{color:var(--link); text-decoration:none;}
+  .gallery-cell img{
+    width:100%;
+    height:130px;
+    object-fit:cover;
+    display:block;
+  }
+
+  .gallery-placeholder{
+    width:100%;
+    height:130px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--muted);
+    font-size:13px;
+    background:#f0f0ef;
+  }
+
+  .gallery-caption{
+    padding:6px 8px;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+
+  .contact-list{
+    list-style:none;
+    max-width:400px;
+  }
+
+  .contact-list li{
+    margin-bottom:10px;
+    font-size:15px;
+  }
+
+  .contact-list a{
+    color:var(--link);
+    text-decoration:none;
+  }
+
   .contact-list a:hover{text-decoration:underline;}
-  .contact-list .label{color:var(--muted); display:inline-block; width:90px;}
+
+  .contact-list .label{
+    color:var(--muted);
+    display:inline-block;
+    width:90px;
+  }
 
   footer{
-    text-align:left; color:var(--muted); font-size:12.5px;
+    text-align:left;
+    color:var(--muted);
+    font-size:12.5px;
     padding-top:10px;
   }
+
   footer a{color:var(--muted);}
 
   @media (max-width:760px){
-    .layout{flex-direction:column; padding:32px 22px;}
-    .left-col{width:100%;}
-    .photo{width:160px; height:200px;}
-    .nav-right{
-      display:none; width:100%; flex-direction:column; align-items:flex-start; gap:12px;
-      padding-top:10px; border-top:1px solid var(--border);
+    .layout{
+      flex-direction:column;
+      padding:32px 22px;
     }
+
+    .left-col{width:100%;}
+
+    .photo{
+      width:160px;
+      height:200px;
+    }
+
+    .nav-right{
+      display:none;
+      width:100%;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:12px;
+      padding-top:10px;
+      border-top:1px solid var(--border);
+    }
+
     .nav-right.open{display:flex;}
+
     .menu-toggle{display:block;}
   }
 </style>
 </head>
+
 <body>
 
 <nav>
   <div class="nav-inner">
+
     <div class="brand" id="nav-name">Himani R</div>
+
     <button class="menu-toggle" id="menu-toggle">☰</button>
+
     <div class="nav-right" id="nav-right">
+
       <button data-page="home" class="active">Home</button>
-      <button data-page="about">About Me</button>
+
+      <button data-page="about">About</button>
+
       <button data-page="research">Research</button>
-      <button data-page="teaching">Teaching</button>
-      <button data-page="projects">Projects</button>
-      <button data-page="gallery">Gallery</button>
+
+      <button data-page="teaching">Education & Society</button>
+
+      <button data-page="projects">Writing & Reporting</button>
+
+      <button data-page="gallery">Audio & Media</button>
+
       <button data-page="cv">CV</button>
+
       <button data-page="contact">Contact</button>
+
     </div>
   </div>
 </nav>
 
+
 <div class="layout">
 
-  <!-- LEFT COLUMN: persistent across all pages -->
+  <!-- LEFT COLUMN -->
+
   <div class="left-col">
+
     <div class="photo" id="photo"></div>
 
     <div class="left-block" id="left-contact-block">
@@ -177,383 +416,1230 @@
     </div>
 
     <footer>Hosted on GitHub Pages</footer>
+
   </div>
 
-  <!-- RIGHT: page content -->
+
+  <!-- MAIN CONTENT -->
+
   <div class="main">
 
+    <!-- HOME -->
+
     <section class="page active" id="page-home">
+
       <h1 id="home-name">Himani R</h1>
+
       <p class="home-tagline" id="home-tagline"></p>
+
       <p id="home-intro"></p>
+
+      <h2 class="section-heading">Selected Work</h2>
+
+      <div id="home-selected-work"></div>
+
     </section>
+
+
+    <!-- ABOUT -->
 
     <section class="page" id="page-about">
-      <h1>About Me</h1>
+
+      <h1>About</h1>
+
       <div id="about-content"></div>
+
     </section>
+
+
+    <!-- RESEARCH -->
 
     <section class="page" id="page-research">
-      <h1>Research Papers &amp; Blog</h1>
+
+      <h1>Research & Investigation</h1>
+
       <div id="research-list"></div>
+
     </section>
+
+
+    <!-- EDUCATION & SOCIETY -->
 
     <section class="page" id="page-teaching">
-      <h1>Teaching</h1>
+
+      <h1>Education & Society</h1>
+
       <div id="teaching-list"></div>
+
     </section>
+
+
+    <!-- WRITING & REPORTING -->
 
     <section class="page" id="page-projects">
-      <h1>Projects</h1>
+
+      <h1>Writing & Reporting</h1>
+
       <div id="projects-list"></div>
+
     </section>
+
+
+    <!-- AUDIO & MEDIA -->
 
     <section class="page" id="page-gallery">
-      <h1>Gallery</h1>
+
+      <h1>Audio & Media</h1>
+
       <div id="gallery-list"></div>
+
     </section>
+
+
+    <!-- CV -->
 
     <section class="page" id="page-cv">
+
       <h1>Curriculum Vitae</h1>
+
       <div class="cv-box">
+
         <div>
-          <h3 style="margin-bottom:4px; font-size:16px;">View or download my full CV</h3>
-          <p style="color:var(--muted); font-size:14px; margin-bottom:0;" id="cv-updated">Last updated: —</p>
+
+          <h3 style="margin-bottom:4px; font-size:16px;">
+            View or download my full CV
+          </h3>
+
+          <p style="color:var(--muted); font-size:14px; margin-bottom:0;" id="cv-updated">
+            Last updated: —
+          </p>
+
         </div>
+
         <div>
-          <a class="btn" id="cv-view-btn" href="#" target="_blank" rel="noopener">View CV</a>
-          <a class="btn secondary" id="cv-download-btn" href="#" download>Download</a>
+
+          <a class="btn"
+             id="cv-view-btn"
+             href="#"
+             target="_blank"
+             rel="noopener">
+             View CV
+          </a>
+
+          <a class="btn secondary"
+             id="cv-download-btn"
+             href="#"
+             download>
+             Download
+          </a>
+
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- CONTACT -->
+
     <section class="page" id="page-contact">
+
       <h1>Contact</h1>
+
       <ul class="contact-list" id="contact-list"></ul>
+
     </section>
 
   </div>
 </div>
 
+
 <script>
+
 /* ============================================================
    EDIT EVERYTHING BELOW THIS LINE.
-   This is the ONLY section you need to touch to update your site.
-   Do not edit anything below the "DO NOT EDIT" marker.
    ============================================================ */
+
 
 const CONFIG = {
 
-  // ---- Basic info ----
-  name: "Himani R",
-  tagline: "Teacher / Researcher",
-  intro: "Hello! I'm Himani. I am a literature student and an aspiring researcher. I believe in the transformative power of education and storytelling. I am deeply interested in understanding people — their behaviour, identities, beliefs, and personal growth. History interests me through the people who shaped it, literature through its characters, and psychology through its study of human behaviour.",
 
-  // ---- Profile photo ----
-  // Upload an image (e.g. photo.jpg) to your GitHub repo, same folder as
-  // index.html, then put its exact filename here. Leave "" for a placeholder.
+  // ==========================================================
+  // BASIC INFORMATION
+  // ==========================================================
+
+  name: "Himani R",
+
+  tagline: "Writer | Researcher | Educator | Aspiring Journalist",
+
+  intro:
+    "I am an English Literature graduate, educator and writer interested in the stories behind education, inequality, culture and everyday life. My academic research, teaching experience and background in radio have shaped my interest in journalism as a way of asking questions, listening to people and making complex issues accessible.",
+
+
+  // ==========================================================
+  // PROFILE PHOTO
+  // ==========================================================
+
   photoFile: "photo.jpg",
 
-  // ---- Left-column contact & links ----
+
+  // ==========================================================
+  // LEFT COLUMN CONTACT & LINKS
+  // ==========================================================
+
   email: "himaniramesh2004@gmail.com",
+
   leftLinks: [
-    { label: "GitHub", value: "himaniofficial", url: "https://github.com/himaniofficial" },
-    { label: "Youtube", value: "Paatshala.byHimani", url: "https://youtube.com/@paatshala.byhimani?si=t2dssifNktR70aiM" },
-    { label: "Linkedin", value: "View LinkedIn Profile", url: "https://www.linkedin.com/in/himaniofficial?utm_source=share_via&utm_content=profile&utm_medium=member_android" }
+
+    {
+      label: "GitHub",
+      value: "himaniofficial",
+      url: "https://github.com/himaniofficial"
+    },
+
+    {
+      label: "YouTube",
+      value: "Paatshala.byHimani",
+      url: "https://youtube.com/@paatshala.byhimani?si=t2dssifNktR70aiM"
+    },
+
+    {
+      label: "LinkedIn",
+      value: "View LinkedIn Profile",
+      url: "https://www.linkedin.com/in/himaniofficial?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+
   ],
 
-  // ---- About Me ----
-  // Build this like a real page: mix paragraphs, section headings,
-  // sub-headings, and bullet lists, in any order, by adding blocks below.
-  //
-  // Block types you can use:
-  //   { type: "paragraph", text: "..." }
-  //   { type: "heading", text: "Education" }          <- big section title
-  //   { type: "subheading", text: "University Name" } <- smaller title under a heading
-  //   { type: "list", items: ["...", "...", "..."] }  <- bullet points
+
+  // ==========================================================
+  // ABOUT
+  // ==========================================================
+
   about: [
-    { type: "paragraph", text: "Himani currently works as a kindergarten teacher in India. She comes from a traditional Marwari family but chooses to question blind traditions and customs. An intersectional feminist who believes in equality and women's rights, she takes great pride in persistence, diligence, empathy, and lifelong learning. She loves public speaking and has hosted many academic and cultural events. She also enjoys acting on stage and has performed different roles in skits and dramas." },
-    { type: "heading", text: "Education" },
-    { type: "subheading", text: "Sacred Heart College" },
-    { type: "list", items: [
-      "Master's in English (2024 - 2026)",
-      "CGPA: 8.5/10 (First Class with Distinction)"
-    ]},
-    { type: "subheading", text: "Jain College" },
-    { type: "list", items: [
-      "Bachelor's in English (2021 - 2024)",
-      "CGPA: 7.6/10 (First Class)"
-    ]}
+
+    {
+      type: "paragraph",
+      text:
+        "I am an English Literature graduate, educator and aspiring journalist interested in understanding people, societies and the stories behind everyday issues."
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "My academic background has trained me to read critically, examine narratives and conduct research. My experiences in radio, writing and education have strengthened my interest in communication, listening and storytelling."
+    },
+
+    {
+      type: "paragraph",
+      text:
+        "I am particularly interested in education, inequality, culture, identity and social change. I see journalism as a way of turning curiosity into questions, questions into investigation, and investigation into stories that help people understand the world around them."
+    },
+
+
+    {
+      type: "heading",
+      text: "Education"
+    },
+
+
+    {
+      type: "subheading",
+      text: "Sacred Heart College"
+    },
+
+
+    {
+      type: "list",
+      items: [
+
+        "Master's in English (2024 - 2026)",
+
+        "CGPA: 8.5/10 (First Class with Distinction)"
+
+      ]
+    },
+
+
+    {
+      type: "subheading",
+      text: "Jain College"
+    },
+
+
+    {
+      type: "list",
+      items: [
+
+        "Bachelor's in English (2021 - 2024)",
+
+        "CGPA: 7.6/10 (First Class)"
+
+      ]
+    },
+
+
+    {
+      type: "heading",
+      text: "Interests"
+    },
+
+
+    {
+      type: "list",
+      items: [
+
+        "Journalism and storytelling",
+
+        "Education and inequality",
+
+        "Culture and identity",
+
+        "Literature and society",
+
+        "Human development",
+
+        "Research and critical inquiry"
+
+      ]
+    }
+
   ],
 
-  // ---- Research Papers & Blog ----
+
+  // ==========================================================
+  // RESEARCH & INVESTIGATION
+  // ==========================================================
+
   research: [
+
     {
-      title: "Working Until the End: A Neo-Marxist Perspective on Pandemic Literature Through the Lens of Ling Ma's Severance",
-      meta: "Oct, 2026",
-      description: "This paper examines the influence of contemporary economic systems in human conduct, professional routines, and interpersonal relations during a period of global crises.",
+      title:
+        "Working Until the End: A Neo-Marxist Perspective on Pandemic Literature Through the Lens of Ling Ma's Severance",
+
+      meta:
+        "MA Dissertation | 2026",
+
+      description:
+        "This research examines work, economic systems, alienation, commodification and human behaviour during a period of global crisis through Ling Ma's Severance.",
+
       links: [
-        { label: "PDF", url: "" },
-        { label: "Blog Post", url: "" }
+
+        {
+          label: "PDF",
+          url: ""
+        },
+
+        {
+          label: "Research Notes",
+          url: ""
+        }
+
       ]
     },
+
+
     {
-      title: "The Thematic Analysis on the Journey to Adulthood in Ruskin Bond's The Room on the Roof",
-      meta: "Apr, 2024",
-      description: "This paper focuses on briefing the coming-of-age journey of an adolescent through the thematic analysis of the novel.",
+      title:
+        "The Thematic Analysis on the Journey to Adulthood in Ruskin Bond's The Room on the Roof",
+
+      meta:
+        "Undergraduate Research | 2024",
+
+      description:
+        "A thematic examination of adolescence, identity and the coming-of-age experience in Ruskin Bond's novel.",
+
       links: [
-        { label: "arXiv", url: "" }
+
+        {
+          label: "Research",
+          url: ""
+        }
+
       ]
+    },
+
+
+    {
+      title:
+        "Future Research & Investigations",
+
+      meta:
+        "Ongoing",
+
+      description:
+        "This section will document future research-based journalism, interviews, investigations and explanatory pieces.",
+
+      links: []
+
     }
+
   ],
 
-  // ---- Education and Society ----
+
+  // ==========================================================
+  // EDUCATION & SOCIETY
+  // ==========================================================
+
   teaching: [
+
     {
-      title: "Storytelling & Theatre Program",
-      meta: "Kindergarten Teacher — Springdays CBSE & Cambridge, 2026",
-      description: "Currently serving as storytelling and theatre program teacher for young learners aged 4–5 years and developing children's listening, speaking, and vocabulary skills."
+      title:
+        "Kindergarten Storytelling & Theatre",
+
+      meta:
+        "Teacher — Springdays CBSE & Cambridge | 2026–Present",
+
+      description:
+        "Working with young learners aged 4–5, developing storytelling, speaking, listening and vocabulary skills. This experience has deepened my interest in education, language and the social environments in which children learn."
     },
+
+
     {
-      title: "English Language Training",
-      meta: "Language Instructor — Naan Mudhalvan Springboards, 2025",
-      description: "Led English Essentials Training Program for Polytechnic college students. Assessed their performance and supported students with language difficulties."
+      title:
+        "English Language Training",
+
+      meta:
+        "Language Instructor — Naan Mudhalvan Springboards | 2025",
+
+      description:
+        "Led English Essentials Training for Polytechnic college students, assessed performance and supported learners experiencing language difficulties."
+    },
+
+
+    {
+      title:
+        "Education & Society — Future Work",
+
+      meta:
+        "Future reporting",
+
+      description:
+        "Future stories will explore education inequality, language access, classroom experiences, teachers, learning environments and the wider social impact of education."
+    },
+
+
+    {
+      title:
+        "Field Notes",
+
+      meta:
+        "Personal observations → future reporting",
+
+      description:
+        "A space for observations and questions arising from everyday experiences in education and society. These notes will serve as starting points for future reporting and research."
     }
+
   ],
 
-  // ---- Writing and Reporting ----
-  // Same format as Research/Teaching. Links are optional — leave url: "" to hide a link.
+
+  // ==========================================================
+  // WRITING & REPORTING
+  // ==========================================================
+
   projects: [
-    {
-      title: "Penny Wise (Educational Publishing Project)",
-      meta: "Founder, 2026",
-      description: "Designing and developing storytelling books, coloring books, and activity books for children",
-      links: [
-        { label: "GitHub", url: "" },
-        { label: "Live Demo", url: "" }
-      ]
-    }
-  ],
 
-  // ---- Gallery ----
-  // Grouped by category. Each category has a name and a list of images.
-  // For each image: set "src" to an image URL/filename once you have it
-  // (leave "" for now to show a placeholder box), and "caption" is optional.
-  gallery: [
+
     {
-      category: "Category Name Here",
-      images: [
-        { src: "", caption: "" },
-        { src: "", caption: "" },
-        { src: "", caption: "" }
+      title:
+        "Selected Writing",
+
+      meta:
+        "Writing portfolio",
+
+      description:
+        "This section will feature essays, commentary, cultural writing and long-form pieces developed from my interests in society, identity, education and human behaviour.",
+
+      links: [
+
+        {
+          label: "Coming Soon",
+          url: ""
+        }
+
       ]
     },
+
+
     {
-      category: "Another Category",
-      images: [
-        { src: "", caption: "" },
-        { src: "", caption: "" }
+      title:
+        "Reported Features",
+
+      meta:
+        "Journalism portfolio",
+
+      description:
+        "Future reporting will include interviews, human-interest stories, education stories and features examining issues through the experiences of people.",
+
+      links: []
+
+    },
+
+
+    {
+      title:
+        "Research-Based Explainers",
+
+      meta:
+        "Future journalism",
+
+      description:
+        "A collection of accessible pieces that investigate complex social issues and explain them through research, evidence and multiple perspectives.",
+
+      links: []
+
+    },
+
+
+    {
+      title:
+        "Penny Wise",
+
+      meta:
+        "Educational Publishing Project | 2026",
+
+      description:
+        "An educational publishing project focused on creating accessible storytelling and activity resources for children.",
+
+      links: [
+
+        {
+          label: "GitHub",
+          url: ""
+        },
+
+        {
+          label: "Live Project",
+          url: ""
+        }
+
       ]
+
     }
+
   ],
 
-  // ---- CV ----
-  // Upload a cv.pdf to your GitHub repo (same folder as index.html)
-  // and keep this filename matching it.
+
+  // ==========================================================
+  // AUDIO & MEDIA
+  // ==========================================================
+
+  gallery: [
+
+    {
+      category:
+        "Campus FM / Radio",
+
+      images: [
+
+        {
+          src: "",
+          caption:
+            "Radio Jockey — Campus FM"
+        },
+
+        {
+          src: "",
+          caption:
+            "Audio and communication work"
+        }
+
+      ]
+    },
+
+
+    {
+      category:
+        "Audio Journalism — Coming Soon",
+
+      images: [
+
+        {
+          src: "",
+          caption:
+            "Interview / audio feature"
+        },
+
+        {
+          src: "",
+          caption:
+            "Podcast / audio story"
+        }
+
+      ]
+    },
+
+
+    {
+      category:
+        "Media & Events",
+
+      images: [
+
+        {
+          src: "",
+          caption:
+            "Academic and cultural events"
+        },
+
+        {
+          src: "",
+          caption:
+            "Public speaking and hosting"
+        }
+
+      ]
+    }
+
+  ],
+
+
+  // ==========================================================
+  // CV
+  // ==========================================================
+
   cv: {
-    fileUrl: "https://drive.google.com/file/d/1CIU3do_MvjgScFNGELz8vBjNRYk0hnLX/view?usp=drivesdk",
-    lastUpdated: "July 2026"
+
+    fileUrl:
+      "https://drive.google.com/file/d/1CIU3do_MvjgScFNGELz8vBjNRYk0hnLX/view?usp=drivesdk",
+
+    lastUpdated:
+      "July 2026"
+
   },
 
-  // ---- Contact page ----
+
+  // ==========================================================
+  // CONTACT
+  // ==========================================================
+
   contact: [
-    { label: "Email", value: "himaniramesh2004@gmail.com", url: "mailto:you@email.com" },
-    { label: "", value: "" }
+
+    {
+      label: "Email",
+      value: "himaniramesh2004@gmail.com",
+      url: "mailto:himaniramesh2004@gmail.com"
+    },
+
+    {
+      label: "LinkedIn",
+      value: "Himani R",
+      url: "https://www.linkedin.com/in/himaniofficial"
+    }
+
   ]
+
 };
+
 
 /* ============================================================
    DO NOT EDIT BELOW THIS LINE
-   (rendering logic — safe to ignore)
    ============================================================ */
 
-document.title = CONFIG.name;
-document.getElementById('nav-name').textContent = CONFIG.name;
-document.getElementById('home-name').textContent = CONFIG.name;
-document.getElementById('home-tagline').textContent = CONFIG.tagline;
-document.getElementById('home-intro').textContent = CONFIG.intro;
 
-// Photo
-const photoEl = document.getElementById('photo');
-if (CONFIG.photoFile && CONFIG.photoFile.trim() !== "") {
-  const img = document.createElement('img');
-  img.src = CONFIG.photoFile;
-  img.alt = CONFIG.name;
+document.title = CONFIG.name;
+
+document.getElementById('nav-name').textContent =
+  CONFIG.name;
+
+document.getElementById('home-name').textContent =
+  CONFIG.name;
+
+document.getElementById('home-tagline').textContent =
+  CONFIG.tagline;
+
+document.getElementById('home-intro').textContent =
+  CONFIG.intro;
+
+
+/* ============================================================
+   HOME — SELECTED WORK
+   ============================================================ */
+
+const homeSelectedWork =
+  document.getElementById('home-selected-work');
+
+
+CONFIG.projects.slice(0,3).forEach(p => {
+
+  const div = document.createElement('div');
+
+  div.className = 'item';
+
+  div.innerHTML = `
+
+    <h3 style="font-size:16px; font-weight:700; margin-bottom:4px;">
+      ${p.title}
+    </h3>
+
+    <div class="meta">
+      ${p.meta}
+    </div>
+
+    <div class="desc">
+      ${p.description}
+    </div>
+
+  `;
+
+  homeSelectedWork.appendChild(div);
+
+});
+
+
+/* ============================================================
+   PHOTO
+   ============================================================ */
+
+const photoEl =
+  document.getElementById('photo');
+
+
+if (
+  CONFIG.photoFile &&
+  CONFIG.photoFile.trim() !== ""
+) {
+
+  const img =
+    document.createElement('img');
+
+  img.src =
+    CONFIG.photoFile;
+
+  img.alt =
+    CONFIG.name;
+
   photoEl.appendChild(img);
+
 } else {
-  const initials = CONFIG.name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
-  photoEl.textContent = initials;
+
+  const initials =
+    CONFIG.name
+      .split(' ')
+      .map(w => w[0])
+      .join('')
+      .slice(0,2)
+      .toUpperCase();
+
+  photoEl.textContent =
+    initials;
+
 }
 
-// Left column: email + links
-document.getElementById('left-email').textContent = CONFIG.email;
-document.getElementById('left-email').href = "mailto:" + CONFIG.email;
 
-const leftLinksBlock = document.getElementById('left-links-block');
+/* ============================================================
+   LEFT COLUMN
+   ============================================================ */
+
+document.getElementById('left-email').textContent =
+  CONFIG.email;
+
+document.getElementById('left-email').href =
+  "mailto:" + CONFIG.email;
+
+
+const leftLinksBlock =
+  document.getElementById('left-links-block');
+
+
 CONFIG.leftLinks.forEach(l => {
-  const h4 = document.createElement('h4');
-  h4.textContent = l.label;
-  const a = document.createElement('a');
-  a.href = l.url; a.textContent = l.value; a.target = "_blank"; a.rel = "noopener";
+
+  const h4 =
+    document.createElement('h4');
+
+  h4.textContent =
+    l.label;
+
+  const a =
+    document.createElement('a');
+
+  a.href =
+    l.url;
+
+  a.textContent =
+    l.value;
+
+  a.target =
+    "_blank";
+
+  a.rel =
+    "noopener";
+
   leftLinksBlock.appendChild(h4);
+
   leftLinksBlock.appendChild(a);
+
 });
 
-document.getElementById('left-cv-link').href = CONFIG.cv.fileUrl;
 
-// About (block-based renderer)
-const aboutEl = document.getElementById('about-content');
+document.getElementById('left-cv-link').href =
+  CONFIG.cv.fileUrl;
+
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+
+const aboutEl =
+  document.getElementById('about-content');
+
+
 CONFIG.about.forEach(block => {
+
   if (block.type === "paragraph") {
-    const p = document.createElement('p');
-    p.textContent = block.text;
+
+    const p =
+      document.createElement('p');
+
+    p.textContent =
+      block.text;
+
     aboutEl.appendChild(p);
-  } else if (block.type === "heading") {
-    const h = document.createElement('h2');
-    h.className = "section-heading";
-    h.textContent = block.text;
-    aboutEl.appendChild(h);
-  } else if (block.type === "subheading") {
-    const h = document.createElement('h3');
-    h.className = "sub-heading";
-    h.textContent = block.text;
-    aboutEl.appendChild(h);
-  } else if (block.type === "list") {
-    const ul = document.createElement('ul');
-    ul.className = "bullets";
-    block.items.forEach(it => {
-      const li = document.createElement('li');
-      li.textContent = it;
-      ul.appendChild(li);
-    });
-    aboutEl.appendChild(ul);
+
   }
+
+  else if (block.type === "heading") {
+
+    const h =
+      document.createElement('h2');
+
+    h.className =
+      "section-heading";
+
+    h.textContent =
+      block.text;
+
+    aboutEl.appendChild(h);
+
+  }
+
+  else if (block.type === "subheading") {
+
+    const h =
+      document.createElement('h3');
+
+    h.className =
+      "sub-heading";
+
+    h.textContent =
+      block.text;
+
+    aboutEl.appendChild(h);
+
+  }
+
+  else if (block.type === "list") {
+
+    const ul =
+      document.createElement('ul');
+
+    ul.className =
+      "bullets";
+
+    block.items.forEach(it => {
+
+      const li =
+        document.createElement('li');
+
+      li.textContent =
+        it;
+
+      ul.appendChild(li);
+
+    });
+
+    aboutEl.appendChild(ul);
+
+  }
+
 });
 
-// Research
-const researchEl = document.getElementById('research-list');
+
+/* ============================================================
+   RESEARCH
+   ============================================================ */
+
+const researchEl =
+  document.getElementById('research-list');
+
+
 CONFIG.research.forEach(r => {
-  const div = document.createElement('div');
-  div.className = 'item';
-  const linksHtml = (r.links || [])
-    .filter(l => l.url && l.url.trim() !== "")
-    .map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`)
-    .join('');
+
+  const div =
+    document.createElement('div');
+
+  div.className =
+    'item';
+
+  const linksHtml =
+    (r.links || [])
+
+      .filter(
+        l =>
+          l.url &&
+          l.url.trim() !== ""
+      )
+
+      .map(
+        l =>
+          `<a href="${l.url}"
+              target="_blank"
+              rel="noopener">
+              ${l.label}
+           </a>`
+      )
+
+      .join('');
+
+
   div.innerHTML = `
-    <h3 style="font-size:16px; font-weight:700; margin-bottom:4px;">${r.title}</h3>
-    <div class="meta">${r.meta}</div>
-    <div class="desc">${r.description}</div>
-    ${linksHtml ? `<div class="links">${linksHtml}</div>` : ''}
+
+    <h3 style="font-size:16px; font-weight:700; margin-bottom:4px;">
+      ${r.title}
+    </h3>
+
+    <div class="meta">
+      ${r.meta}
+    </div>
+
+    <div class="desc">
+      ${r.description}
+    </div>
+
+    ${
+      linksHtml
+      ?
+      `<div class="links">${linksHtml}</div>`
+      :
+      ''
+    }
+
   `;
+
+
   researchEl.appendChild(div);
+
 });
 
-// Teaching
-const teachingEl = document.getElementById('teaching-list');
+
+/* ============================================================
+   EDUCATION & SOCIETY
+   ============================================================ */
+
+const teachingEl =
+  document.getElementById('teaching-list');
+
+
 CONFIG.teaching.forEach(t => {
-  const div = document.createElement('div');
-  div.className = 'item';
+
+  const div =
+    document.createElement('div');
+
+  div.className =
+    'item';
+
   div.innerHTML = `
-    <h3 style="font-size:16px; font-weight:700; margin-bottom:4px;">${t.title}</h3>
-    <div class="meta">${t.meta}</div>
-    <div class="desc">${t.description}</div>
+
+    <h3 style="font-size:16px; font-weight:700; margin-bottom:4px;">
+      ${t.title}
+    </h3>
+
+    <div class="meta">
+      ${t.meta}
+    </div>
+
+    <div class="desc">
+      ${t.description}
+    </div>
+
   `;
+
   teachingEl.appendChild(div);
+
 });
 
-// Projects
-const projectsEl = document.getElementById('projects-list');
+
+/* ============================================================
+   WRITING & REPORTING
+   ============================================================ */
+
+const projectsEl =
+  document.getElementById('projects-list');
+
+
 CONFIG.projects.forEach(p => {
-  const div = document.createElement('div');
-  div.className = 'item';
-  const linksHtml = (p.links || [])
-    .filter(l => l.url && l.url.trim() !== "")
-    .map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`)
-    .join('');
+
+  const div =
+    document.createElement('div');
+
+  div.className =
+    'item';
+
+
+  const linksHtml =
+    (p.links || [])
+
+      .filter(
+        l =>
+          l.url &&
+          l.url.trim() !== ""
+      )
+
+      .map(
+        l =>
+          `<a href="${l.url}"
+              target="_blank"
+              rel="noopener">
+              ${l.label}
+           </a>`
+      )
+
+      .join('');
+
+
   div.innerHTML = `
-    <h3 style="font-size:16px; font-weight:700; margin-bottom:4px;">${p.title}</h3>
-    <div class="meta">${p.meta}</div>
-    <div class="desc">${p.description}</div>
-    ${linksHtml ? `<div class="links">${linksHtml}</div>` : ''}
+
+    <h3 style="font-size:16px; font-weight:700; margin-bottom:4px;">
+      ${p.title}
+    </h3>
+
+    <div class="meta">
+      ${p.meta}
+    </div>
+
+    <div class="desc">
+      ${p.description}
+    </div>
+
+    ${
+      linksHtml
+      ?
+      `<div class="links">${linksHtml}</div>`
+      :
+      ''
+    }
+
   `;
+
+
   projectsEl.appendChild(div);
+
 });
 
-// Gallery (grouped by category)
-const galleryEl = document.getElementById('gallery-list');
+
+/* ============================================================
+   AUDIO & MEDIA
+   ============================================================ */
+
+const galleryEl =
+  document.getElementById('gallery-list');
+
+
 CONFIG.gallery.forEach(group => {
-  const heading = document.createElement('h2');
-  heading.className = 'section-heading';
-  heading.textContent = group.category;
+
+  const heading =
+    document.createElement('h2');
+
+  heading.className =
+    'section-heading';
+
+  heading.textContent =
+    group.category;
+
   galleryEl.appendChild(heading);
 
-  const grid = document.createElement('div');
-  grid.className = 'gallery-grid';
+
+  const grid =
+    document.createElement('div');
+
+  grid.className =
+    'gallery-grid';
+
+
   group.images.forEach(img => {
-    const cell = document.createElement('div');
-    cell.className = 'gallery-cell';
-    if (img.src && img.src.trim() !== "") {
-      cell.innerHTML = `<img src="${img.src}" alt="${img.caption || group.category}">`;
-    } else {
-      cell.innerHTML = `<div class="gallery-placeholder">Image</div>`;
+
+    const cell =
+      document.createElement('div');
+
+    cell.className =
+      'gallery-cell';
+
+
+    if (
+      img.src &&
+      img.src.trim() !== ""
+    ) {
+
+      cell.innerHTML =
+        `<img src="${img.src}"
+              alt="${img.caption || group.category}">`;
+
     }
-    if (img.caption && img.caption.trim() !== "") {
-      const cap = document.createElement('div');
-      cap.className = 'gallery-caption';
-      cap.textContent = img.caption;
+
+    else {
+
+      cell.innerHTML =
+        `<div class="gallery-placeholder">
+           Coming Soon
+         </div>`;
+
+    }
+
+
+    if (
+      img.caption &&
+      img.caption.trim() !== ""
+    ) {
+
+      const cap =
+        document.createElement('div');
+
+      cap.className =
+        'gallery-caption';
+
+      cap.textContent =
+        img.caption;
+
       cell.appendChild(cap);
+
     }
+
+
     grid.appendChild(cell);
+
   });
+
+
   galleryEl.appendChild(grid);
+
 });
 
-// CV page
-document.getElementById('cv-view-btn').href = CONFIG.cv.fileUrl;
-document.getElementById('cv-download-btn').href = CONFIG.cv.fileUrl;
-document.getElementById('cv-updated').textContent = "Last updated: " + CONFIG.cv.lastUpdated;
 
-// Contact page
-const contactEl = document.getElementById('contact-list');
+/* ============================================================
+   CV
+   ============================================================ */
+
+document.getElementById('cv-view-btn').href =
+  CONFIG.cv.fileUrl;
+
+document.getElementById('cv-download-btn').href =
+  CONFIG.cv.fileUrl;
+
+document.getElementById('cv-updated').textContent =
+  "Last updated: " +
+  CONFIG.cv.lastUpdated;
+
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
+const contactEl =
+  document.getElementById('contact-list');
+
+
 CONFIG.contact.forEach(c => {
-  const li = document.createElement('li');
-  if (c.url && c.url.trim() !== "") {
-    li.innerHTML = `<span class="label">${c.label}</span><a href="${c.url}" target="_blank" rel="noopener">${c.value}</a>`;
-  } else {
-    li.innerHTML = `<span class="label">${c.label}</span>${c.value}`;
+
+  const li =
+    document.createElement('li');
+
+
+  if (
+    c.url &&
+    c.url.trim() !== ""
+  ) {
+
+    li.innerHTML =
+      `<span class="label">
+        ${c.label}
+       </span>
+       <a href="${c.url}"
+          target="_blank"
+          rel="noopener">
+          ${c.value}
+       </a>`;
+
   }
+
+  else {
+
+    li.innerHTML =
+      `<span class="label">
+        ${c.label}
+       </span>
+       ${c.value}`;
+
+  }
+
+
   contactEl.appendChild(li);
+
 });
 
-// Page navigation
-const navButtons = document.querySelectorAll('.nav-right button');
-const pages = document.querySelectorAll('.page');
+
+/* ============================================================
+   PAGE NAVIGATION
+   ============================================================ */
+
+const navButtons =
+  document.querySelectorAll('.nav-right button');
+
+const pages =
+  document.querySelectorAll('.page');
+
+
 navButtons.forEach(btn => {
+
   btn.addEventListener('click', () => {
-    const target = btn.getAttribute('data-page');
-    pages.forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + target).classList.add('active');
-    navButtons.forEach(b => b.classList.remove('active'));
+
+    const target =
+      btn.getAttribute('data-page');
+
+
+    pages.forEach(p =>
+      p.classList.remove('active')
+    );
+
+
+    document
+      .getElementById('page-' + target)
+      .classList.add('active');
+
+
+    navButtons.forEach(b =>
+      b.classList.remove('active')
+    );
+
+
     btn.classList.add('active');
-    document.getElementById('nav-right').classList.remove('open');
+
+
+    document
+      .getElementById('nav-right')
+      .classList.remove('open');
+
+
     window.scrollTo(0,0);
+
   });
+
 });
 
-// Mobile menu toggle
-document.getElementById('menu-toggle').addEventListener('click', () => {
-  document.getElementById('nav-right').classList.toggle('open');
-});
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+
+document
+  .getElementById('menu-toggle')
+  .addEventListener('click', () => {
+
+    document
+      .getElementById('nav-right')
+      .classList.toggle('open');
+
+  });
+
 </script>
 
 </body>
